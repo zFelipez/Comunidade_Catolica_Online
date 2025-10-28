@@ -14,8 +14,8 @@ export  default function HomeButton ({children,href}: HomeButtonProps){
          
          flex items-center justify-center text-xl
          hover:shadow-[0_0_10px_#ffffff]
-      
-         transition:shadow duration-200
+         hover:scale-[1.010] 
+         transition:all duration-200
          "> {children}</Link>
       )
 }

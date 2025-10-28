@@ -1,3 +1,5 @@
+'use client'
+import Intentions from "@/app/components/intentions";
 import { Subtitle } from "@/app/components/subtitle";
 
 
@@ -41,7 +43,7 @@ export default function (){
           
  
         </div>
-
+ 
 
 
 
@@ -49,20 +51,13 @@ export default function (){
 
       <div className="mt-8 w-3/5">
 
-     <Subtitle> Intenções Publicas</Subtitle>
-
-     <div className="  h-auto bg-transparent flex flex-col gap-2 ">
-
-     <div className=" h-18 bg-blue-900 rounded-xl flex flex-col gap-1  justify-center border border-amber-50">
+     <Subtitle> Intenções Publicadas</Subtitle>
+      <div className="  h-auto bg-transparent flex flex-col gap-2 ">
+       < Intentions name={''} intention= {''} />
+      < Intentions name={''} intention= {''} />
+      < Intentions name={''} intention= {''} />
+      </div>
      
-       
-      <p className=" pl-4 text-white"> Nome : Felipe da Silva Lima </p>
-      <p className="pl-4 text-white">Intenção : Por Liberina Ferreira </p>
-     </div>
-     
-
-
-     </div>
       </div>
       
         

@@ -14,9 +14,10 @@ export default function PageLayout({
 }>) {
   return (
         <>
-      <Header />
-     
-      <div className="bg-red-500 min-h-screen">
+      
+      
+      <div className="bg-red-500 min-h-screen ">
+       
          <PageTitle>Intenções</PageTitle>
         {children}
       </div>
