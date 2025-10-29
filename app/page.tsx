@@ -57,8 +57,9 @@ export default function Home() {
          
       </div>
 
-     <HomeSection subtitle ={ 'Sobre pagina de Intenção '}></HomeSection>
-     <HomeSection subtitle ={ 'Sobre pagina de Chat Online'} ></HomeSection>
+     <HomeSection image = '/sagrado-coracao.png' subtitle ={ 'Sobre a pagina de Intenção '}></HomeSection>
+     <HomeSection image = '/nossa-senhora.png'  subtitle ={ 'Sobre a pagina de Chat Online'} ></HomeSection>
+     <HomeSection image = '/sao-jose.png'  subtitle ={ 'Sobre a pagina de Orações'} ></HomeSection>
          
       
     </div>

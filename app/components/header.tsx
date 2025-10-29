@@ -44,7 +44,7 @@ export default function Header(){
     return (
   
 
-        <div className=  {`w-full h-fit ${menuOpen ? 'h-fit' : 'max-h-18'} p-2 bg-amber-950/70 backdrop-blur-2xl top-0 flex items-center justify-center  flex-col transition-h
+        <div className=  {`w-full  z-50 h-fit ${menuOpen ? 'h-fit' : 'max-h-18'} p-2 bg-amber-950/70 backdrop-blur-2xl top-0 flex items-center justify-center  flex-col transition-h
         duration-400 ease fixed rounded-b-2xl hover:outline-amber-200  outline `}>
 
         
