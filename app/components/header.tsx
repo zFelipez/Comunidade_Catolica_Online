@@ -4,6 +4,7 @@ import HeaderLinks from "./header-links";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import HeaderButton from "./header-btn";
+import OnlineUsers from "./onlineUsers";
  
 
 
@@ -68,10 +69,12 @@ export default function Header(){
                  <HeaderButton href="/" btnName="Oração do dia"></HeaderButton>
              
             </div>
+          <div className = {`${!menuOpen? 'opacity-0' :'opacity-100' } absolute `}> <OnlineUsers></OnlineUsers> </div>
            
         </div>
-            
+        
         { menuOpen &&  <div className=" flex flex-col  justify-center w-10/10 ">
+          
             <HeaderLinks route="/"> Home</HeaderLinks>
             <HeaderLinks route="/community/intencoes"  > Intenções</HeaderLinks>
             <HeaderLinks route="/community/chat"  > Chat Online</HeaderLinks>
