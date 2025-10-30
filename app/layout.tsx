@@ -5,7 +5,8 @@ import dynamic from "next/dynamic";
 import { EB_Garamond } from "next/font/google";
 import Footer from "./components/footer";
 
-const Header = dynamic(() => import("./components/header"), { ssr: false });
+
+import Header from "./components/header";
 //Header so é carregado no navegaodr nao no build do servidor 
 
 
