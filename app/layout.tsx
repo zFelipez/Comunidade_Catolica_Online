@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "./components/header";
+import dynamic from "next/dynamic";
+
 import { EB_Garamond } from "next/font/google";
 import Footer from "./components/footer";
+
+const Header = dynamic(() => import("./components/header"), { ssr: false });
+//Header so é carregado no navegaodr nao no build do servidor 
+
 
 
 

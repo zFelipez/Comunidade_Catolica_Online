@@ -1,28 +1,28 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabaseClient";
 
 export default function OnlineUsers() {
-  const [onlineCount, setOnlineCount] = useState(0);
+  const [onlineCount, setOnlineCount] = useState<number | null>(null);
 
   useEffect(() => {
-    // Cria o canal de presença (todos entram no mesmo "grupo")
+    if (!supabase) return; // se não há client (server-side), não faz nada
+
     const channel = supabase.channel("online-users", {
       config: {
         presence: {
-          key: crypto.randomUUID(), // identificador único por aba
+          key: crypto.randomUUID(),
         },
       },
     });
 
-    // Quando o Supabase sincroniza o estado de presença
     channel.on("presence", { event: "sync" }, () => {
       const state = channel.presenceState();
       const total = Object.keys(state).length;
       setOnlineCount(total);
     });
 
-    // Quando a conexão é estabelecida
     channel.subscribe(async (status) => {
       if (status === "SUBSCRIBED") {
         await channel.track({
@@ -31,11 +31,17 @@ export default function OnlineUsers() {
       }
     });
 
-    // Quando o componente desmonta (fecha aba, muda de página, etc.)
     return () => {
       channel.unsubscribe();
     };
   }, []);
+
+  if (onlineCount === null)
+    return (
+      <div className="text-sm text-gray-400 bg-gray-800 px-3 py-1 rounded-full">
+        Carregando...
+      </div>
+    );
 
   return (
     <div className="text-sm text-gray-200 bg-blue-900 px-3 py-1 rounded-full">
